@@ -1,0 +1,16 @@
+#!/bin/bash
+set -euo pipefail
+
+# ── Install Docker ────────────────────────────────────────────────────────────
+yum update -y
+yum install -y docker
+systemctl enable --now docker
+
+# ── Pull and run the containerised NGINX web page ────────────────────────────
+docker pull ${docker_image}
+
+docker run -d \
+  --name web \
+  --restart unless-stopped \
+  -p 80:80 \
+  ${docker_image}
