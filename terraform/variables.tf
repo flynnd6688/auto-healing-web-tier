@@ -1,7 +1,7 @@
 variable "aws_region" {
   description = "AWS region to deploy resources"
   type        = string
-  default     = "ap-southeast-2" # Sydney – lowest latency from Melbourne
+  default     = "ap-southeast-2" 
 }
 
 variable "project_name" {
@@ -37,13 +37,13 @@ variable "public_subnet_cidrs" {
 variable "ami_id" {
   description = "Amazon Linux 2023 AMI ID for ap-southeast-2 (update if region changes)"
   type        = string
-  default     = "ami-0310483fb2b488153" # AL2023 ap-southeast-2 (verify before apply)
+  default     = "ami-0310483fb2b488153" 
 }
 
 variable "instance_type" {
   description = "EC2 instance type"
   type        = string
-  default     = "t3.micro" # Free-tier eligible; ~AUD 0.015/hr
+  default     = "t3.micro" 
 }
 
 variable "desired_capacity" {
@@ -67,5 +67,5 @@ variable "max_size" {
 variable "docker_image" {
   description = "Docker image to pull and run on each instance"
   type        = string
-  default     = "ghcr.io/OWNER/auto-healing-web:latest" # Replace OWNER with your GitHub username
+  default     = "yuchenno7/360-test:latest"
 }
